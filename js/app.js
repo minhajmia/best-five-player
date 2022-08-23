@@ -31,3 +31,15 @@ function addToCart(player) {
   player.setAttribute("style", "background: #fff");
   player.setAttribute("class", "disabled btn");
 }
+
+/// perPlayer calculate
+document.getElementById("calculate-btn").addEventListener("click", function () {
+  const perPlayerInputField = document.getElementById("per-player");
+  const perPlayerInputFieldString = perPlayerInputField.value;
+  const perPlayerCost = parseFloat(perPlayerInputFieldString);
+  console.log(perPlayerCost);
+  const totalPlayerCost = perPlayerCost * playerList.length;
+  const expenseElement = document.getElementById("total-expense");
+  expenseElement.innerText = totalPlayerCost;
+  perPlayerInputField.value = "";
+});
