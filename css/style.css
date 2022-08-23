@@ -1,36 +1,74 @@
 body {
     font-family: 'Poppins', sans-serif;
 }
-
 .banner {
     background-color: rgb(0, 0, 0);
     z-index: 9999;
     padding: 10px 0;
     min-height: 400px;
 }
-
 .banner>img {
     min-width: 250px;
 }
-
 img {
     max-width: 66% !important;
     display: block;
     margin: 0 auto
 }
-
 .banner-info {
     text-align: center;
     color: white;
     margin-left: 30px;
 }
-
 .banner-title {
     color: #ff2c6d;
     font-size: 57px;
     font-weight: 700;
 }
-
 .banner-description {
     font-size: 20px;
+}
+
+
+/* players card */
+.players-card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 80px 0;
+}
+.btn-custom {
+    background-color: #ff2c6d;
+}
+.player-select {
+    margin: 80px 0;
+}
+.total {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+/* media query */
+@media only screen and (max-width: 991px) {
+    .player-select {
+        text-align: center;
+    }
+    .player-budget {
+        text-align: center;
+    }
+    .budget-card {
+        padding: 20px 0;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .players-card {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+}
+@media only screen and (max-width: 575px) {
+    .players-card {
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
 }
