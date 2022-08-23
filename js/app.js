@@ -37,11 +37,14 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   const perPlayerInputField = document.getElementById("per-player");
   const perPlayerInputFieldString = perPlayerInputField.value;
   const perPlayerCost = parseFloat(perPlayerInputFieldString);
-  console.log(perPlayerCost);
-  const totalPlayerCost = perPlayerCost * playerList.length;
-  const expenseElement = document.getElementById("total-expense");
-  expenseElement.innerText = totalPlayerCost;
   perPlayerInputField.value = "";
+  if (isNaN(perPlayerCost)) {
+    alert("Please provide a number");
+  } else {
+    const totalPlayerCost = perPlayerCost * playerList.length;
+    const expenseElement = document.getElementById("total-expense");
+    expenseElement.innerText = totalPlayerCost;
+  }
 });
 
 // manager coach cost  and total expense calculate
@@ -49,6 +52,7 @@ function managerCoachCost(costId) {
   const managerCoachInputField = document.getElementById(costId);
   const managerCoachInputFieldString = managerCoachInputField.value;
   const managerCoachCost = parseFloat(managerCoachInputFieldString);
+  managerCoachInputField.value = "";
   return managerCoachCost;
 }
 
